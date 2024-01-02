@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      toc_depth: 2
+      collapse: section
+      scroll_highlight: true
+      before: |
+        <li><a href="./">PreCalculus 12 Minibook</a></li>
+      after: |
+        <li><a href="https://www.miracleeducation.ca/" target="blank">Published by Miracle Education Inc.</a></li>
+    download: [["PreCalculus-12-Minibook - Joshua Zhang.pdf", "PDF"]]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  # citation_package: natbib
+  keep_tex: yes

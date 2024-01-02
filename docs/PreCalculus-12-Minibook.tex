@@ -1,0 +1,230 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\title{PreCalculus 12 Minibook}
+\author{Joshua Zhang}
+\date{}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={PreCalculus 12 Minibook},
+  pdfauthor={Joshua Zhang},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+This minibook summarizes the key concepts and common examples in Pre-Calculus 12 to aid students in learning and reviewing. The content follows the curriculum in BC, Canada.
+
+\hypertarget{motivation}{%
+\section{Motivation}\label{motivation}}
+
+This minibook \ldots{}
+
+\hypertarget{suggestions-to-the-readers}{%
+\section{Suggestions to the Readers}\label{suggestions-to-the-readers}}
+
+\ldots{}
+
+\hypertarget{about-the-author}{%
+\section{About the Author}\label{about-the-author}}
+
+\ldots{}
+
+\hypertarget{how-to-learn-math}{%
+\section{How to Learn Math?}\label{how-to-learn-math}}
+
+\ldots{}
+
+\hypertarget{reviewprerequisite}{%
+\chapter*{Review/Prerequisite}\label{reviewprerequisite}}
+\addcontentsline{toc}{chapter}{Review/Prerequisite}
+
+This chapter summarizes what you are expected to know before reading this book, or take pre-calculus 12.
+
+\hypertarget{order-of-operations}{%
+\section{Order of Operations}\label{order-of-operations}}
+
+\ldots{}
+
+\hypertarget{set}{%
+\section{Set}\label{set}}
+
+\ldots{}
+
+\hypertarget{function-transformations}{%
+\chapter{Function Transformations}\label{function-transformations}}
+
+This chapter introduces \ldots{}
+
+\hypertarget{polynomials-and-polynomial-functions}{%
+\chapter{Polynomials and Polynomial Functions}\label{polynomials-and-polynomial-functions}}
+
+\ldots{}
+
+\hypertarget{rational-radical-and-absolute-value-functions}{%
+\chapter{Rational, Radical, and Absolute Value Functions}\label{rational-radical-and-absolute-value-functions}}
+
+\hypertarget{proportionality}{%
+\section{Proportionality}\label{proportionality}}
+
+\hypertarget{direct-proportionality}{%
+\subsection{Direct Proportionality}\label{direct-proportionality}}
+
+\ldots{}
+
+\hypertarget{inverse-proportionality}{%
+\subsection{Inverse Proportionality}\label{inverse-proportionality}}
+
+\ldots{}
+
+\hypertarget{exponenetial-and-logarithmic-fucnitons}{%
+\chapter{Exponenetial and Logarithmic Fucnitons}\label{exponenetial-and-logarithmic-fucnitons}}
+
+\hypertarget{equations}{%
+\section{Equations}\label{equations}}
+
+Here is an equation.
+
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \label{eq:binom}
+\end{equation}
+
+You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
+
+\hypertarget{theorems-and-proofs}{%
+\section{Theorems and proofs}\label{theorems-and-proofs}}
+
+Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
+
+\begin{theorem}
+\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
+and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
+\[a^2 + b^2 = c^2\]
+\end{theorem}
+
+Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+
+\hypertarget{callout-blocks}{%
+\section{Callout blocks}\label{callout-blocks}}
+
+The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+
+\hypertarget{geometric-sequences-and-series}{%
+\chapter{Geometric Sequences and Series}\label{geometric-sequences-and-series}}
+
+\ldots{}
+
+\hypertarget{trigonometric-functions}{%
+\chapter{Trigonometric Functions}\label{trigonometric-functions}}
+
+\ldots{}
+
+\hypertarget{trigonometric-identities}{%
+\chapter{Trigonometric Identities}\label{trigonometric-identities}}
+
+\ldots{}
+
+\hypertarget{conics}{%
+\chapter{Conics}\label{conics}}
+
+\ldots{}
+
+\hypertarget{other-topics}{%
+\chapter{Other Topics}\label{other-topics}}
+
+\ldots{}
+
+\end{document}

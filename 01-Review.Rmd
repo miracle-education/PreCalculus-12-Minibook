@@ -1,0 +1,11 @@
+# Review/Prerequisite {-}
+
+This chapter summarizes what you are expected to know before reading this book, or take pre-calculus 12.
+
+## Order of Operations
+
+...
+
+## Set
+
+...
