@@ -12,3 +12,72 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* Customized*/
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+/*
+details {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  padding: 0.5em 0.5em 0;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+}
+*/
+
+details > ol {
+    counter-reset: list;
+}
+details > ol > li {
+    list-style: none;
+    position: relative;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+details > ol > li:before {
+    content: "(" counter(list, lower-alpha) ") ";
+    counter-increment: list;
+    position: absolute;
+    left: -2em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+div.example {
+  border: 2px solid #006400;
+  border-radius: 10px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+span.example {
+  color: #006400;
+}
+
+div.definition {
+  border: 2px solid #00008B;
+  border-radius: 10px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+span.definition {
+  color: #00008B;
+}
+
+.cols {display: flex;}

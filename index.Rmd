@@ -1,11 +1,12 @@
 --- 
 title: "PreCalculus 12 Minibook"
 author: "Joshua Zhang"
-# date: "Fall 2023"
 site: bookdown::bookdown_site
+output:
+  bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: https://www.miracleeducation.ca/PreCalculus-12-Minibook/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: "This is a minibook for the PreCalculus 12 course per the curriculum in BC, Canada, summarizing key concepts and common examples."
 link-citations: yes
@@ -14,48 +15,65 @@ github-repo: miracle-education/PreCalculus-12-Minibook
 
 # Preface {-}
 
-This minibook summarizes the key concepts and common examples in Pre-Calculus 12 to aid students in learning and reviewing. The content follows the curriculum in BC, Canada.
+This minibook (unfinished) summarizes the key concepts and common examples in Pre-Calculus 12 to aid students in learning and reviewing. The content follows the curriculum in BC, Canada.
 
-## Motivation
+## Motivation {-}
 
-This minibook ...
+In the multimedia dominated world today, there are plenty of tutorial videos that you can just watch and learn math.
 
+Why do you need to read a book?
 
-## Suggestions to the Readers
+As a college and high school educator, I have noticed an unfavorable learning habit among students: purpose-driven. This leads to impatience and “learning without thinking". Students often fail to see how the topics covered in a given course are interconnected and may not understand the reasoning behind the specific order in which the topics are presented. Believe it or not, the learning outcome (and the final grade, of course) is highly correlated to how the student understands the "big image" of a course. In other words, the interconnections between topics are very important, especially for subjects like mathematics, which usually has topics built upon the previous ones.
 
-...
+In my opinion, reading a textbook could greatly help a student to get the "big image", because when you turn the pages (physical book) or scroll down the document or table of content (e-book) to the topic your are currently learning, you enhance your sense of the order of the topics, in particular the previous chapter or section. For example, if you are learning "subtracting numbers" in elementary school, you may keep seeing "adding numbers" right before it, so that you know that "subtraction" is build upon "addition" as you have to kind of understand "subtraction" as something like "reverting the addition".
 
-## About the Author
+However, a full textbook could be a little too long and redundant for students to read (although this should still be the goal). We can go half a step backward and start with this *minibook*. While the overall sense of the topics and their interconnections are preserved, the contents are not too redundant to overload your mind. Only key concepts and very common examples are included in this minibook; the conclusions come first, so you can skip the explanations if you don't want understand them (although this is highly discouraged). Furthermore, this minibook could also serve as a perfect review material given its compactness.
 
-...
+## How to Read This Minibook {-}
 
-## How to Learn Math?
+This *minibook* is different from a common textbook in several ways. As a result, you can take advantage of them by reading *wisely*.
 
-...
+- Free of redundant long paragraphs, instead, point forms and list are frequently used to organize the key points.
+  - This means the contents are already abridged so that only those important remains. 
+  - As a student, you should not skip any sections/paragraphs.
+- Collapsible sections including examples, proofs of theorems, etc. allows readers to read selectively.
+  - Make good use of this feature by not expand a collapsed section until you really need to.
+  - For example, if the answer is in a collapsed section (hidden), you should try to work on solving the problem yourself before expanding the section to see the answer.
+- Interactive table of contents for fast navigation and clear connections through topics.
+  - You can easily find a topic in the table of contents on the left side.
+  - When you are reading through a chapter, the focus on the table of contents automatically changes as you scrolls down. This allows you to keep track on your progress.
 
-<!-- ## Render book -->
+## How to Learn Math {-}
 
-<!-- You can render the HTML version of this example book without changing anything: -->
+Personally, I would divide the learning process of a mathematical concept (and perhaps many other concepts) into the following stages:
 
-<!-- 1. Find the **Build** pane in the RStudio IDE, and -->
+1. Getting to know the concept.  In this beginning stage, we have just heard about or read about the new concept.
+2. Accepting the concept.  This is the stage where we find the concept "making sense".
+3. Applying the concept to a common scenario.  We can solve a common problem using the concept, despite that we may not know why it is so. When the problem is tricky or involves special case, we may still get confused. *This is the stage where most students stop going further*.
+4. Deriving the concept.  In this stage, we start to think how this concept was originally discovered/emerged/derived.
+5. Understanding and/or proving the concept.  As we are able to derive the concept and understand why it is necessary in math (such as how it might serve the development of mathematics by supporting/preparing for other concepts).
+6. Exploring the concept.  This is the stage where we seriously learn math. Although mathematics has already been well developed, which means that the chance of discovering a new concept is low, it is still a great practice to try to use the concepts that we understand to explore new concepts. If you find the a new concept through exploration, most likely you will find it in a future math course, but this means that you could be a mathematician if you were born hundreds of years ago!
 
-<!-- 1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files. -->
+I will use an example to further explain these stages. Let's say I am learning about *system of two equations*.
 
-<!-- Or build the book from the R console: -->
+1. I know how to solve for $x$ in one equation. Now there are two equations, and there are both $x$ and $y$ to solve for.
+2. When I look at the teacher solving a system of equations, I see how it works. I think I know how to use the elimination method and the substitution method. I also remember that the solution is the intersection of the two lines, although I don't know what this means.
+3. After getting stuck a few times and resolving my confusion through reading notes/asking for help, I can solve for a system of two equations by myself now. I simply remember and follow the steps that the teacher/textbook tells me.
+4. I wonder how the elimination method works, in particular why can I subtract/add two equations altogether? Also, how is the system related to the two lines in a coordinate plane?
+5. I reviewed the properties of equations, and realized that an equation has its left side and right side being equal in values. So, if we add two equations together, the sum of each side of them would also be equal, which makes the sum also an equation. Regarding to the graph, I understand that all points on a curve satisfy the corresponding equation, so if a point is on both the two lines, it satisfies both equations, thus it is the solution to the system. Furthermore, a system of equations with no solution involves two parallel lines that no point is on both of them; a system of equations with infinitely many solution includes two equations that represent the same line. I might be able to write a more formal proof to show this.
+6. What happens if we have three equations from which we solve for $x$, $y$, and $z$? How would it relate to lines in the three dimensional space? How about 4 equations? Is there a four dimensional space in the real world or in mathematics? How about $n$ equations? How does the number of equations and the number of unknowns affect the result? We are going towards the college level *Linear Algebra* from there on.
 
-<!-- ```{r, eval=FALSE} -->
-<!-- bookdown::render_book() -->
-<!-- ``` -->
+Stopping at stage 3 is fine if your purpose is just getting a good grade in this course. In  this case, you may skip the optional proofs in this minibook. However, if you intend to learn mathematics or related subjects (physics, computer science, economics, statistics, etc.) in university, or if you want to , I would highly recommend that you to go further to stage 5.
 
-<!-- To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>. -->
+Learning requires patience and time. There is nothing in the world that you can learn in no time. Keep in mind that you have to go through the stages in order, which means you never start from understanding anything, but start from applying it. This might sound counter-intuitive, but consider the process of learning to bike for example. Do you understand why a bike does not fall before you can ride it? Put another way, being able to ride a bike would greatly help you in understanding why it does not fall. This is why some people say "*you don't understand math, you get used to it*". Summarizing all the above, the most important thing in learning math is *practicing*.
 
-<!-- ## Preview book -->
+## About the Author {-}
 
-<!-- As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console: -->
+I have been helping students learning mathematics and many other science subjects for more than ten years. I went to school in China before university. Then, I got my bachelors degree in Mathematics and in Physics from University of Colorado at Boulder, and I got my master degree in Material Science and Engineering from the same school. After graduation, I started to work as a math and science tutor in Vancouver, Canada.
 
-<!-- ```{r eval=FALSE} -->
-<!-- bookdown::serve_book() -->
-<!-- ``` -->
+Unlike teaching in a classroom, private tutoring allowed me to know how students learn in much more details, especially for the students who are struggling with math. Besides the learning habits of the students, I also had the chance to know about the teaching style of the teachers in schools from the perspective of the students. I realized that most students never read the textbooks for their math classes; in fact, neither do many math teachers use textbooks now. Personally, I highly value the importance of a textbook as it not only provides students with the necessary knowledge, but also outlines the topics in the order that shows how they connect and relate. However, when I was trying to recommend a textbook to students learning pre-calculus/high school math in BC, I could not find one that is good and compact -- students do not wish to "waste" too much time on reading. These summarize the reasons that led me to writing this minibook.
+
+When reading this minibook, if you have any suggestions, concerns, questions, or if you find any mistakes, please do not hesitate to [contact me](https://www.miracleeducation.ca/contact/).
 
 
 ```{r include=FALSE}

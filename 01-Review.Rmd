@@ -1,11 +1,338 @@
+```{r conf, include=FALSE}
+Sys.setenv(R_GSCMD="/opt/homebrew/Cellar/ghostscript/10.02.1/bin/gs")
+local({
+    knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
+})
+```
+
 # Review/Prerequisite {-}
 
-This chapter summarizes what you are expected to know before reading this book, or take pre-calculus 12.
+This chapter summarizes what you are expected to know before reading this minibook, or take pre-calculus 12.
 
-## Order of Operations
+## Sets
 
-...
+### Introduction and Definition
 
-## Set
+::: {.definition #set}
+A **set** is a collection of *different* objects, called **elements** of the set. Usually, sets are denoted by capital letters such as $A$, $B$, etc. The elements of a set can be numbers or other objects such as vectors, functions, other sets, etc. We write $a \in A$ if the set $A$ contains the element $a$, and we read "$a \in A$" as "$\boldsymbol{a}$ **is an element of** $\boldsymbol{A}$".
+:::
 
-...
+The **empty set** is the set with no element, denoted as $\varnothing$. 
+
+A set can have finitely many elements, called a **finite set**, or infinitely many elements, called an **infinite set**.
+
+::: {.example #roster}
+$A = \{\text{red},\, \text{green},\, \text{blue}\}$, $B = \{1,\,2,\,3,\,4,\,5\}$, and $C = \{1,\,2,\,3,\,\dots\}$ are all examples of sets. Here, $A$ and $B$ are finite sets, and $C$ is an infinite set.  
+The set $A$ has 3 elements, red, green, and blue. So, $\text{red} \in A$, $\text{green} \in A$, and $\text{blue} \in A$. Similarly, $1 \in B$, $2 \in B$, etc.
+:::
+
+In this minibook, we will only see sets with numerical elements.
+
+### Notations
+
+To define a set, we can list the elements one by one or describe the elements in words and/or math. The methods of defining a set are summarized as follows:
+
+- **Roster Notation**/**Enumeration Notation** (Listing the elements)  
+All the three sets in Example \@ref(exm:roster) are defined under the roster notation.
+
+- **Semantic Notation**/**Statement Notation** (Describing the properties of the elements in words)
+
+  ::: {.example #semantic}
+$D$ is the set of all positive integers less than 100; $E$ is the set of all students in my pre-calculus 12 class.
+:::
+
+- **Set Builder Notation** (Describing the properties of the elements in math and/or words)  
+State the symbol to be described on the left side of "$\,\mid\,$" or "$\,:\,$", then describe the symbol on the right side.
+
+  ::: {.example #set-builder}
+  The following sets are defined using the set builder notation:
+\begin{align*}
+F &= \{x \mid x \in D \text{ and $x$ is a multiple of } 2\} = \{x \in D \mid x \text{ is a multiple of } 10\}\\
+G &= \{n \mid n^2 \in D\}\\
+H &= \{x^2 \mid x \in B\} = \{x \mid x = b^2 \text{ for some } b \in B\}
+\end{align*}
+
+  <details><summary><i>See the roster notation of the sets $F,\,G,\,H$ to check your understanding</i></summary>
+
+  \begin{align*}
+F &= \{10,\, 20,\, \dots,\, 90\}\\
+G &= \{1,\, 2,\, 3,\, \dots,\, 9\}\\
+H &= \{1,\, 4,\, 9,\, 16,\, 25\}
+\end{align*}</details>
+:::
+
+- **Interval Notation** (only for sets of connected real numbers)  
+An interval is written as two numbers separated by a comma, surrounded by round or square bracket The smaller of the two numbers is always on the left. The interval is the set of all real numbers between these two numbers, with each of the two numbers themselves *included* if a *square bracket* is used, or *excluded* if a *round bracket* (parenthesis) is used. The two numbers are called the **endpoints** of the interval.
+
+  ::: {.example #interval}
+  The following intervals are described in set builder notation.
+\begin{align*}
+I_1 &= (1,\, 3) = \{x \in \mathbb{R} \mid 1 < x < 3\}\\
+I_2 &= [-2,\, 2] = \{x \in \mathbb{R} \mid -2 \le x \le 2\}\\
+I_3 &= [0,\, 5) = \{x \in \mathbb{R} \mid 0 \le x < 5\}\\
+I_4 &= (0,\, 5] = \{x \in \mathbb{R} \mid 0 < x \le 5\} .
+\end{align*}
+:::
+
+  An interval is **open** if both the two endpoints are excluded in the interval, such as $I_1$; an interval is **closed** if both the two endpoints are included, such as $I_2$; an interval is **half-open** if exactly one endpoint is included, such as $I_3$ (right-opened) and $I_4$ (left-open).
+
+  ::: {.example #inf-interval}
+  An interval can be bounded on only one side:
+\begin{align*}
+I_5 &= (-1,\, \infty) = \{x \in \mathbb{R} \mid x > -1\}\\
+I_6 &= (-\infty,\, 3] = \{x \in \mathbb{R} \mid x \le 3\} .
+\end{align*}
+:::
+Note that the symbol $\infty$, which means *infinity*, is *not* a number and thus can *never* be included in an interval. 
+
+### Subset
+
+::: {.definition #subset}
+We say the set $P$ is a *subset* of the set $Q$ (written as $P \subseteq Q$) if all elements in $P$ are also in $Q$.
+:::
+
+::: {.example #subset1}
+Recall from Example \@ref(exm:roster), $B = \{1,\, 2,\, 3,\, 4,\, 5\}$ and $C = \{1,\, 2,\, 3,\, \dots\}$. All elements in $B$ are in $C$, so $B \subseteq C$.
+:::
+
+::: {.example #subset2}
+Recall from Example \@ref(exm:semantic), $D = \{1,\, 2,\, \dots,\, 99\}$, and from Example \@ref(exm:set-builder), $F = \{10,\, 20,\, \dots,\, 90\}$ and $G = \{1,\, 2,\, \dots,\, 9\}$. Both $F$ and $G$ are subsets of $D$.
+:::
+
+::: {.example #subset3}
+By definition, every set is a subset of itself. Also, the empty set $\varnothing$ is a subset of every set.
+:::
+
+### Basic Set Operations
+
+#### Union of two sets
+
+::: {.definition #union}
+The *union* of the sets $P$ and $Q$ (denoted as $P \cup Q$) is the set containing all the elements in either or both $P$ and $Q$.
+:::
+
+::: {.example #union}
+Let's start from the union of some simple sets:
+\begin{align*}
+& \{1,\, 2,\, 3\} \cup \{1,\, 3,\, 5,\, 7\} = \{1,\, 2,\, 3,\, 5,\, 7\} \\
+& \{2,\, 4\} \cup \{10\} = \{2,\, 4,\, 10\} \\
+& \{3,\, 6,\, 9\} \cup \{3,\, 6,\, 9\} = \{3,\, 6,\, 9\} .
+\end{align*}
+:::
+
+::: {.example #union-interval}
+The union of intervals will appear frequently in this minibook, such as
+\begin{align*}
+& (-\infty,\, 0] \cup [2,\, 5] = \{x \in \mathbb{R} \mid x \le 0 \text{ or } 2 \le x \le 5\} \\
+& (-\infty,\, 3) \cup (3,\, \infty)  = \{x \in \mathbb{R} \mid x \ne 3\} .
+\end{align*}
+:::
+
+#### Intersection of two sets
+
+::: {.definition #intersection}
+The *intersection* of the sets $P$ and $Q$ (denoted as $P \cap Q$) is the set containing only the elements in both $P$ and $Q$.
+:::
+
+::: {.example #intersection}
+Let's work with the same simple sets as above:
+\begin{align*}
+& \{1,\, 2,\, 3\} \cap \{1,\, 3,\, 5,\, 7\} = \{1,\, 3\} \\
+& \{2,\, 4\} \cap \{10\} = \varnothing \\
+& \{3,\, 6,\, 9\} \cap \{3,\, 6,\, 9\} = \{3,\, 6,\, 9\} .
+\end{align*}
+:::
+
+#### Difference of two sets
+
+::: {.definition #set-diff}
+The *difference* of the sets $P$ and $Q$ (denoted as $P \setminus Q$ or $P - Q$) is the set containing the elements in $P$ that are not in $Q$.
+:::
+
+::: {.example #set-diff}
+Let's work with the same simple sets again:
+\begin{align*}
+& \{1,\, 2,\, 3\} \setminus \{1,\, 3,\, 5,\, 7\} = \{2\} \\
+& \{2,\, 4\} \setminus \{10\} = \{2,\, 4\} \\
+& \{3,\, 6,\, 9\} \setminus \{3,\, 6,\, 9\} = \varnothing .
+\end{align*}
+:::
+
+### Common Number Sets
+
+We will be frequently using these sets in this minibook: 
+
+- The set of natural numbers $\mathbb{N} = \{1,\, 2,\, 3,\, \dots\}$ includes all positive integers (some texts include $0$ in $\mathbb{N}$).
+- The set of integers $\mathbb{Z} = \{\dots,\, -2,\, -1,\, 0,\, 1,\, 2,\, \dots\}$.
+- The set of rational numbers $\displaystyle\mathbb{Q} = \left\{\left.\frac{a}{b}\,\right\vert\, a,b \in \mathbb{Z} \text{ and } b \ne 0 \right\}$ includes all integers and fractions of integers.
+- The set of real numbers $\mathbb{R}$ includes all the numbers on a continuous number line. This includes rational and irrational numbers (all numbers that we have learned until know are real numbers). 
+
+It might be worth nothing that $\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R}$.
+
+## Operations
+
+### Types of operations
+
+- **[Addition](https://en.wikipedia.org/wiki/Addition)**, **[subtraction](https://en.wikipedia.org/wiki/Subtraction)**, **[multiplication](https://en.wikipedia.org/wiki/Multiplication)**, and **[division](https://en.wikipedia.org/wiki/Division_(mathematics))**.
+
+- **[Exponentiation](https://en.wikipedia.org/wiki/Exponentiation)**, including with negative and fractional exponents
+
+  - Identities/laws of exponents:
+    - $a^{m+n} = a^m \cdot a^n$;
+    - $a^{m-n} = \displaystyle\frac{a^m}{a^n}$, where $a \ne 0$;
+    - $\left(a^m\right)^n = a^{mn} = \left(a^n\right)^m$;
+    - $(ab)^m = a^mb^m$, and $\displaystyle\left(\frac{a}{b}\right)^m = \frac{a^m}{b^m}$, where $b \ne 0$;
+    - $a^0 = 1$ whenever $a \ne 0$ (what is $0^0$?).
+
+  - Converting a negative exponent: 
+    \[a^{-m} = \frac{1}{a^m} .\]
+
+    ::: {.example #neg-exp}
+    Rewrite the following without a negative exponent: (a) $a^{-1}$; (b) $3x^{-1}y$; (c) $\displaystyle \frac{2u}{3v^{-2}}$.
+
+    <details><summary>Solutions</summary>
+    (a) $\displaystyle a^{-1} = \frac{1}{a}$;
+    (b) $\displaystyle 3x^{-1}y = 3y \cdot x^{-1} = 3y \cdot \frac{1}{x} = \frac{3y}{x}$;
+    (c) $\displaystyle \frac{2u}{3v^{-2}} = \frac{2u}{3} \cdot \frac{1}{v^{-2}} = \frac{2u}{3} \cdot v^2 = \frac{2uv^2}{3}$.
+</details>
+:::
+
+  - Convert a fractional exponent:
+    \[a^{\frac{m}{n}} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m .\]
+
+    ::: {.example #frac-exp}
+    Rewrite the following without a fractional exponent: (a) $a^{\frac{1}{2}}$; (b) $25^{\frac{3}{2}}$; (c) $\displaystyle \left(\frac{u}{v^2}\right)^\frac{1}{3}$.
+
+    <details><summary>Solutions</summary>
+    (a) $\displaystyle a^{\frac{1}{2}} = \sqrt{a}$;
+    (b) $\displaystyle 25^{\frac{3}{2}} = \left(\sqrt{25}\right)^3 = 5^3 = 125$ (Why do we not write $\sqrt{25^3}$ instead?);
+    (c) $\displaystyle \left(\frac{u}{v^2}\right)^\frac{1}{3} = \frac{u^\frac{1}{3}}{v^\frac{2}{3}} = \frac{\sqrt[3]{u}}{\sqrt[3]{v^2}}$.
+</details>
+:::
+
+  - Converting a negative fractional exponent:
+    \[a^{-\frac{m}{n}} = \frac{1}{\sqrt[n]{a^m}} = \frac{1}{\left(\sqrt[n]{a}\right)^m}\]
+
+    ::: {.example #neg-frac-exp}
+    Rewrite the following single powers so that the results only contain positive integer exponents: (a) $5a^{-\frac{3}{2}}$; (b) $\displaystyle \frac{1}{2}x^{-\frac{1}{3}}$; (c) $-3x^{-\frac{2}{3}}$.
+
+    <details><summary>Solutions</summary>
+    (a) $\displaystyle 5a^{-\frac{3}{2}} = \frac{5}{a^{\frac{3}{2}}} = \frac{5}{\sqrt{a^3}}$;
+    (b) $\displaystyle \frac{1}{2}x^{-\frac{1}{3}} = \frac{1}{2x^\frac{1}{3}} = \frac{1}{2\, \sqrt[3]{x}}$;
+    (c) $\displaystyle -3x^{-\frac{2}{3}} = -\frac{3}{x^\frac{2}{3}} = -\frac{3}{\sqrt[3]{x^2}}$.
+</details>
+:::
+
+  - You should be able to evaluate/simplify expressions like this:
+
+    ::: {.example #mix-exp}
+    Evaluate $\displaystyle \frac{27^{\frac{2}{3}}}{16^{\frac{5}{4}} \times 36^{-\frac{1}{2}}} \times \left(\frac{3}{2}\right)^{-3}$.
+    
+    <details><summary>Solution</summary>
+    \begin{align*}
+    \frac{27^{\frac{2}{3}}}{16^{\frac{5}{4}} \times 36^{-\frac{1}{2}}} \times \left(\frac{3}{2}\right)^{-3} 
+    &= \frac{27^{\frac{2}{3}} \times 36^{\frac{1}{2}}}{16^{\frac{5}{4}}} \times \left(\frac{2}{3}\right)^{3} \\
+    &= \frac{\left(\sqrt[3]{27}\right)^2 \times \sqrt{36}}{\left(\sqrt[4]{16}\right)^5} \times \frac{2^3}{3^3} \\
+    &= \frac{3^2 \times 6}{2^5} \times \frac{2^3}{3^3} \\
+    &= \frac{3^2 \times (2 \times 3) \times 2^3}{2^5 \times 3^3} \\
+    &= \frac{3^3 \times 2^4}{2^5 \times 3^3} \\
+    &= \frac{1}{2} .
+    \end{align*}
+</details>
+:::
+
+- **Absolute Value**
+
+  The *absolute value* of a real number is "the number without its sign". That is to say, for a real number $x$, its absolute value $\lvert x \rvert$ is 
+  - $x$ itself if $x \ge 0$, or 
+  - $-x$ if $x<0$ (so that $-x>0$ is indeed positive).
+  
+  ::: {.definition #abs}
+Let $x \in \mathbb{R}$. As described above, the absolute value of $x$, denoted as $\lvert x \rvert$, is defined as
+\[\lvert x \rvert = \begin{cases}x,\quad &\text{if } x \ge 0 \\ -x,\quad &\text{if } x < 0 \end{cases} .\]
+:::
+  
+- **Basic Trigonometry**
+
+  - The three trigonometric ratios, sine ($\sin$), cosine ($\cos$), and tangent ($\tan$), of angles between $0^\circ$ and $90^\circ$.
+
+    :::::: {.cols data-latex=""}
+    
+    ::: {.col data-latex="{0.5\textwidth}"}
+    - $\displaystyle \sin\theta = \frac{\mathrm{opp}}{\mathrm{hyp}}$
+    
+    - $\displaystyle \cos\theta = \frac{\mathrm{adj}}{\mathrm{hyp}}$
+    
+    - $\displaystyle \tan\theta = \frac{\mathrm{opp}}{\mathrm{adj}}$
+    :::
+
+    ::: {.col data-latex="{0.5\textwidth}"}
+    ```{r trangle, echo=FALSE, message=FALSE, out.width='50%', fig.asp=1, fig.align='center', crop=TRUE}
+    x <- c(0, 3, 3)
+    y <- c(0, 2, 0)
+    r <- 0.5
+    theta <- seq(0, 0.588, length=100)
+    plot.new()
+    plot.window(xlim=c(0,3.3), ylim=c(-0.3,2), asp=1)
+    polygon(x,y)
+    lines(x=r*cos(theta), y=r*sin(theta))
+    text(0.6, 0.2, expression(theta), cex=2)
+    text(1.5, -0.15, "adjacent", cex=2)
+    text(3.15, 1, "opposite", srt=90, cex=2)
+    text(1.5, 1.2, "hypotenuse", cex=2, srt=33.69)
+    ```
+    :::
+    ::::::
+
+  - The three trigonometric ratios of any angles, using the idea of the [unit circle](https://www.miracleeducation.ca/PreCalculus-11-Minibook/trigonometry.html#unitcircle).
+
+### Order of Operations
+
+- Evaluating or simplifying an expression could involve multiple steps of operations. Generally, there are 4 levels of priorities:
+  1. Parentheses
+  2. Exponentiation
+  3. Multiplication, Division
+  4. Addition, Subtraction
+  
+  
+
+  
+  
+- 
+
+### Use of Parathesis
+
+### Unary and Binary Operations
+
+### Inverse Operations
+
+## Algebra
+
+### Common Identities and Simplification
+
+### Solving Equations
+
+### Inequlities
+
+### Convensions on Using Letters
+
+
+## Functions
+
+### Introduction
+
+### Direct and Inverse Proportionalities
+
+### Linear Functions
+
+### Quadratic Functions
+
+
+## Analytic Geometries
+
+### The Cartesian Plane
+
+### Distance Between Points
+
+
+
